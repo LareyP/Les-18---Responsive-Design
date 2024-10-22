@@ -1,0 +1,94 @@
+/* Standaard stijlen, mobile first aanpak */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-image: url(./afbeeldingen/geleen.jpg);
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Centrale secties layout: Mobile first, dus stacked layout voor smallere schermen */
+main {
+    display: block;
+    padding: 10px;
+}
+
+.left {
+    margin-bottom: 20px;
+}
+
+.left ul {
+    list-style-type: square;
+}
+
+.right {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.right .article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.right .article img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsieve layout: breid de layout uit op grotere schermen */
+@media(min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 20px;
+    }
+
+    .left {
+        grid-column: span 2;
+    }
+
+    .right {
+        grid-column: span 9;
+    }
+
+    .right .article {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .right .article img {
+        max-width: 200px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: black;
+    }
+
+    h2 {
+        margin-right: 20px;
+    }
+}
